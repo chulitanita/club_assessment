@@ -13,16 +13,54 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neucha|Cabin+Sketch">
     
 </head>
-<body>
+<script>
+        function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+    
+    function checkCookie() {
+      var user=getCookie("username");
+      if (user != "") {
+        alert("Welcome again " + user);
+      } else {
+         user = prompt("Please enter your name:","");
+         if (user != "" && user != null) {
+           setCookie("username", user, 30);
+         }
+      }
+    }
+    </script>
+    
+<body onload="checkCookie()">
+        
     <!-- 
-DONE Verify that the input is a valid email address and make that field required.
-Create a cookie upon successful sign up.
-Instead of redirecting on successful sign up, Replace sign up form with “Thank you for signing up” message. (This will most likely require ajax).
-If you navigate back to the page after successful sign up, you should see the thank you message  instead of the sign up form.
-Lay the page out using the most recent Bootstrap framework.
+DONE 1. Verify that the input is a valid email address and make that field required.
+2. Create a cookie upon successful sign up.
+3. Instead of redirecting on successful sign up, Replace sign up form with “Thank you for signing up” message. (This will most likely require ajax).
+4. If you navigate back to the page after successful sign up, you should see the thank you message  instead of the sign up form.
+DONE 3. Lay the page out using the most recent Bootstrap framework.
 Feel free to either use jQuery or vanilla javascript. -->
    <!-- Sketchy Design from Bootstrap -->
-   <div class="card mb-3 col-md-6 offset-lg-3 mt-3">
+   <div class=" mb-3 col-md-6 offset-lg-3 mt-3">
         <h3 class="card-header text-success mt-3 mr-0 ml-0">Feel like this good boy?</h3>
         <div class="card-body">
           <h5 class="Working like a dog?">We see that post-grad hustle.</h5>
@@ -54,14 +92,11 @@ Feel free to either use jQuery or vanilla javascript. -->
     </div>
 </div>
 </div>
-<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script> -->
+
 <link rel="script" href="node_modules/jquery-validation/dist/jquery.validate.min.js">
 <link rel="script" href="node_modules/jquery/dist/jquery.min.js">
+
 </body>
 </html>
-
-</script>
 </body>
 </html>
