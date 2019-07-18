@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+</head>
+<body>
+    Cookie Name: <input type="text" id="cName" /> Cookie Value: <input type="text" id="cValue" />
+    <input type="button" value="Add" onClick="addCookie()" />
+    <input type="button" value="View" onClick="showCookie(document.getElementById('cName').value)" />
+    <!-- <input type="button" value="Delete" onClick="eraseCookie(document.getElementById('cName').value)" /> -->
+</body>
+
+
+  <script>
+    function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+    return true;
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function showCookie(name)
+{
+    if(!name) {
+        alert('\nPlease enter the name of cookie in the  cookie name field.');
+        return false;
+    }
+    var val = readCookie(name);
+    if(val){
+        alert(readCookie(name));
+    }
+    else alert('Cookie "' + name + '" doesn\'t exist!');
+}
+
+// function eraseCookie(name) {
+//     if(!name) {
+//         alert('\nPlease enter the name of cookie in the  cookie name field.');
+//         return false;
+//     }
+//     if(readCookie(name)){
+//         if(createCookie(name,"",-1)) {
+//             alert('Cookie "' + name + '" has been deleted!');        
+//         }
+//     }
+//     else alert('Cookie "' + name + '" doesn\'t exist!');
+// }
+
+function addCookie()
+{
+    cookie_name = document.getElementById("cName").value.replace(/^\s+|\s+$/g,'');
+    cookie_value = document.getElementById("cValue").value.replace(/^\s+|\s+$/g,'');
+    if(cookie_name.length && cookie_value.length){
+        createCookie(cookie_name, cookie_value, 7);
+        alert("New cookie has been added, \ncookie name : " + cookie_name + "\ncookie value : " + cookie_value);
+    }
+    else{
+        alert("Please enter a name and value for the cookie.");
+    }
+}
+if(name = readCookie('name')) alert('Welcome back, ' + name);
+  </script>
+</html>
