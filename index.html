@@ -4,13 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link type="script" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"
+    type="text/javascript">
+    <link rel="script" href="email_verification.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <form name="sign_up" action="/action_page.php" onsubmit="return validateForm()" method="post">
-        Name: <input type="text" name="name">
-        Email: <input type="text" name="email">
-        <input type="submit" value="Submit">
-    </form>
+    <!-- 
+Verify that the input is a valid email address and make that field required.
+Create a cookie upon successful sign up.
+Instead of redirecting on successful sign up, Replace sign up form with “Thank you for signing up” message. (This will most likely require ajax).
+If you navigate back to the page after successful sign up, you should see the thank you message  instead of the sign up form.
+Lay the page out using the most recent Bootstrap framework.
+Feel free to either use jQuery or vanilla javascript. -->
+   <!-- Sketchy Design from Bootstrap -->
+   <div class="card mb-3 col-md-6 offset-3 mt-3">
+        <h3 class="card-header text-success mt-3 mr-0 ml-0">Feel like this good boy?</h3>
+        <div class="card-body">
+          <h5 class="Working like a dog?">We see you.</h5>
+          <h6 class="card-subtitle text-muted"></h6>
+        </div>
+        <img style="margin: 0 auto; height: 200px; width: 70%; display: block;" src="keyboard_dog.jpg" alt="Card image">
+        <div class="card-body ">
+          <p class="card-text">We're introducing another, all-natural energy drink to an already saturated market! Comes in multiple different <span class="text-success">organic</span>, <span class="text-danger">fair-trade</span>, <span class="text-warning">social justice</span> flavors, so you can feel good about paying so much extra. <span class="text-info">We do the social justice so you don't have to.</span></p>
+        </div>
+        <ul class="list-group list-group-flush border-success">
+          <li class="list-group-item text-success"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#10004;</span>
+            Calories in lower digits than a sled dog's wet nose.</li>
+          <li class="list-group-item text-success"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#10004</span>Sweeter 'n your mammaw's love.</li>
+          <li class="list-group-item text-success"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#10004;</span>Recycled cans more durable than than Arnold Schwarzeneggar in The Terminator.</li>
+        </ul>
+        <div class="card-body offset-md-1">
+          <a href="#" class="card-link btn btn-secondary disabled btn-sm">Get me some dranks!</a>
+          <a href="#" class="card-link btn btn-secondary disabled btn-sm">Whadduya mean I don't have to think?</a>
+        </div>
+      </div>
+      <div class="card mb-3 col-md-4 offset-4 mt-3">
+        <div class="card-body">
+          <h4 class="card-title">Invest in our product to support earth-worm farmers in coastal Florida.</h4>
+          <h6 class="card-subtitle mb-2 text-muted"> </h6>
+          <p class="card-text">Worm farmers have some of the dirtiest jobs, aside from sewage workers, janitors, animal midwives, and elephant breeders. </p>
+          <a href="#" class="card-link">I love the cause. I'm gonna invest <3</a>
+          <a href="#" class="card-link">Wut?</a>
+        </div>
+      </div>
+
+<form id="myform">
+        <label for="field">Required, email: </label>
+        <input class="left" id="field" name="field">
+        <br/>
+        <input type="submit" value="Validate!">
+        </form>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+<script>
+    // just for the demos, avoids form submit
+    jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid"
+    });
+    $( "#myform" ).validate({
+        rules: {
+        field: {
+            required: true,
+            email: true
+        }
+        }
+});
+</script>
+</body>
+</html>
+
+</script>
 </body>
 </html>
