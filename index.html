@@ -1,126 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hustle Muscle</title>
-    <link rel="stylesheet" href="bootstrap.css">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Hustle Muscle</title>
+      <link rel="stylesheet" href="bootstrap.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neucha|Cabin+Sketch">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <!-- <script src="https://registry.npmjs.org/jquery/-/jquery-3.4.1.tgz"></script> -->
+      <script src="cookie.js"></script>
+   </head>
+   <body onload="checkCookie();">
+      <div class=" mb-3 col-md-6 offset-lg-3 mt-3">
+         <h3 class="card-header text-success mt-3 mr-0 ml-0">Feel like this good boy?</h3>
+         <div class="card-body">
+            <h5 class="Working like a dog?">We see you hustlin'.</h5>
+            <h6 class="card-subtitle text-muted">Who has time for sleep, exercise, or eating vegetables?</h6>
+         </div>
+         <img style="margin: 0 auto; height: 200px; width: 70%; display: block;" src="keyboard_dog.jpg" alt="Card image">
+         <div class="card-body ">
+            <p class="card-text">We're introducing an all-natural energy drink! Comes in multiple different <span class="text-success">organic</span>, <span class="text-danger">fair-trade</span>, <span class="text-warning">social justice warrior</span> flavors, so you can feel good about paying way too much. One Hustle-Muscle	&#9400; provides all the vitamins, nutrients, fiber and alertness and love you need in one day.<span class="text-info"> We do the social justice so you don't have to.</span></p>
+         </div>
+         <ul class="list-group list-group-flush border-success">
+            <li class="list-group-item text-success"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#10004;</span>
+               Calories in lower digits than a sled dog's nose.
+            </li>
+            <li class="list-group-item text-success"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#10004</span>Sweeter 'n your grandmaw's kisses.</li>
+            <li class="list-group-item text-success"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#10004;</span>Recycled cans more resilient than Wolverine.<sup>*You'll feel indestructible, too.</sup></li>
+         </ul>
+         <div class="form-group mt-5 mb-5 w-100" id="get_rid_of_this_on_submit">
+            <form class="result" onSubmit="setCookie('user_email', document.getElementById('email').value, 1)">
+               <input required type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Take my email!" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto; height: 40px; width: 100%; font-family: 'Cabin Sketch', cursive;">
+               <small id="emailHelp" class="form-text text-muted ">We'll keep your email a secret (sharing is NOT caring in this case). ;]</small>
+               <input id="submit_button" type="submit" class="btn btn-success mt-3 w-100" style="font-size: 1.5rem; color: white; font-family: 'Cabin Sketch', cursive;">
+            </form>
+         </div>
 
-    <link rel="script" href="email_verification.js">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neucha|Cabin+Sketch">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <style>
-      li {
-        font-size: 16px;
-        padding: 5px;
-        list-style-type: none;
-      }
-      li:nth-of-type(2n) {
-        background: #eee;
-        border-top: 1px solid #d2cd3d;
-        border-bottom: 1px solid #d2cd3d;
-      }
-      </style>
-</head>
-<body>
-  
-  <!-- 
-    DONE 1. Verify that the input is a valid email address and make that field required.
-    2. Create a cookie upon successful sign up. ???????????? -_- why don't the cookies stick???
-    3. Instead of redirecting on successful sign up, Replace sign up form with “Thank you for signing up” message. (This will most likely require ajax).
-    4. If you navigate back to the page after successful sign up, you should see the thank you message  instead of the sign up form.
-    DONE 3. Lay the page out using the most recent Bootstrap framework.
-    Feel free to either use jQuery or vanilla javascript. -->
-    <!-- Sketchy Design from Bootstrap -->
-    <div class=" mb-3 col-md-6 offset-lg-3 mt-3">
-      <h3 class="card-header text-success mt-3 mr-0 ml-0">Feel like this good boy?</h3>
-      <div class="card-body">
-        <h5 class="Working like a dog?">We see you hustlin'.</h5>
-        <h6 class="card-subtitle text-muted">Who has time for healthy sleep, exercise, or eating vegetables?</h6>
+         <div id="thankyou" class="card text-white bg-success mb-3" style="max-width: 100%; margin-top: 2rem; padding: 10px; text-align: center;>
+            <div class="card-body">
+              <h4 class="card-title">Success!</h4>
+              <p class="card-text">Thanks for signing up! We're sending free Hustle Muscle coupons to you now!</p>
+            </div>
+          </div>
       </div>
-      <img style="margin: 0 auto; height: 200px; width: 70%; display: block;" src="keyboard_dog.jpg" alt="Card image">
-      <div class="card-body ">
-        <p class="card-text">We're introducing an all-natural energy drink! Comes in multiple different <span class="text-success">organic</span>, <span class="text-danger">fair-trade</span>, <span class="text-warning">social justice warrior</span> flavors, so you can feel good about paying way too much. One Hustle-Muscle	&#9400; provides all the vitamins, nutrients, fiber and alertness and love you need in one day.<span class="text-info"> We do the social justice so you don't have to.</span></p>
-      </div>
-      <ul class="list-group list-group-flush border-success">
-        <li class="list-group-item text-success"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#10004;</span>
-          Calories in lower digits than a sled dog's nose.</li>
-          <li class="list-group-item text-success"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#10004</span>Sweeter 'n your grandmaw's kisses.</li>
-          <li class="list-group-item text-success"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#10004;</span>Recycled cans more resilient than Wolverine.<sup>*You'll feel indestructible, too.</sup></li>
-        </ul>
-          <form class="result">
-            
-              <div class="form-group mt-5 mb-5 w-100" id="get_rid_of_this_on_submit">
-                <input required type="email" class="form-control" id="add" aria-describedby="emailHelp" placeholder="Take my email!" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto; height: 40px; width: 100%; font-family: 'Cabin Sketch', cursive;">
-                  <small id="emailHelp" class="form-text text-muted ">We'll keep all your email secrets private. ;]</small>
-                  <button id="submit_button" type="submit" class="btn btn-success mt-3 w-100" style="font-size: 1.5rem; color: white; font-family: 'Cabin Sketch', cursive;">Send me free sample coupons!</button>
-              </div>
-                </form>
-              </div>
-         
-    
-    <link type="script" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js">
-    <link rel="script" href="node_modules/jquery-validation/dist/jquery.validate.min.js">
-    <link rel="script" href="node_modules/jquery/dist/jquery.min.js">
-    
-    <div class="container">
-        <div class="inner first">Hello</div>
-        <div class="inner second">And</div>
-        <div class="inner third">Goodbye</div>
-    </div>
-
-    <script>
-      $( "div.result" ).replaceWith( "<h2>Is this working?</h2>" );
-
-    // window.onload="checkCookie();"
-    // $('#submit_button').click(function(e) {
-    //   console.log("prevent default may work...");
-    //   e.preventDefault();
-    //   var add = $('#add').val();
-    //   $('#result').replaceWith("<h2>Thanks for signing up!</h2>");
-  // }
-
-  
-
-
-
-     
-//       function setCookie(cname, cvalue, exdays) {
-//       var d = new Date();
-//       d.setTime(d.getTime() + (exdays*24*60*60*1000));
-//       var expires = "expires=" + d.toGMTString();
-//       document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-//     }
-    
-//     function getCookie(cname) {
-//       var name = cname + "=";
-//       var decodedCookie = decodeURIComponent(document.cookie);
-//       var ca = decodedCookie.split(';');
-//       for(var i = 0; i < ca.length; i++) {
-//         var c = ca[i];
-//         while (c.charAt(0) == ' ') {
-//           c = c.substring(1);
-//         }
-//         if (c.indexOf(name) == 0) {
-//           return c.substring(name.length, c.length);
-//         }
-//       }
-//       return "";
-//     }
-    
-//     function checkCookie() {
-//       var user = getCookie("username");
-//       if (user != "") {
-//         alert("Welcome again " + user);
-//       } else {
-//          user = prompt("Please enter your name:","");
-//          if (user != "" && user != null) {
-//            setCookie("username", user, 1);
-//          }
-//       }
-//     }
-    </script>
-</body>
+   </body>
 </html>
