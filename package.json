@@ -5,7 +5,7 @@
   "main": "cookie.js",
   "dependencies": {
     "jquery": "^3.4.1",
-    "jquery-validation": "^1.19.1",
+    "jquery-validation": "^1.19.4",
     "js-cookie": "^2.2.0"
   },
   "devDependencies": {},
